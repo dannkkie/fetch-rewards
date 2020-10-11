@@ -32,19 +32,19 @@
     </v-app-bar>
 
     <v-main>
-      <HelloWorld/>
+      <DataList />
     </v-main>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+import DataList from './components/DataList';
 
 export default {
   name: 'App',
 
   components: {
-    HelloWorld,
+    DataList,
   },
 
   data: () => ({
