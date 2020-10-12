@@ -48,9 +48,10 @@
         try{
           const response = await fetch(proxyUrl + targetUrl);
           const results = await response.json();
-          let filteredResults = results.filter(result => result.name !== null && result.name !== '');
-          let sortedResultsByName = filteredResults.sort((first, second) => first['name'] > second['name']);
-          let sortedResultsByListId = sortedResultsByName.sort((first, second) => first['listId'] - second['listId'])
+          const filteredResults = results.filter(result => result.name !== null && result.name !== '');
+          const sortAlphaNum = (first, second) => first['name'].localeCompare(second['name'], 'en', {numeric: true})
+          const sortedList = filteredResults.sort(sortAlphaNum);
+          const sortedResultsByListId = sortedList.sort((first, second) => first['listId'] - second['listId']);
           this.results = sortedResultsByListId;
           console.log(this.results)
           } catch(error) {
