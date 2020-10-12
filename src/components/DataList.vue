@@ -1,5 +1,8 @@
 <template>
   <v-container>
+    <v-toolbar flat>
+      <v-toolbar-title class="font-weight-black">Fetch Rewards exercise - Grouping, Sorting and Filtering</v-toolbar-title>
+    </v-toolbar>
     <v-data-table
     :headers="headers"
     :items="results"
