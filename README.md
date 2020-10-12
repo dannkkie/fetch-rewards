@@ -6,7 +6,7 @@ git clone https://github.com/dannkkie/fetch-rewards.git
 ## Change to the cloned project directory
 cd fetch-rewards
 ```
-## Install required Modules
+### Install required Modules
 npm install
 ```
 
