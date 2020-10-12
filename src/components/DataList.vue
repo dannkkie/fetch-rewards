@@ -40,18 +40,17 @@
 
     methods: {
       async fetchData() {
+
+        // using proxy because i had CORS issues
+
         let proxyUrl = 'https://cors-anywhere.herokuapp.com/';
         let targetUrl = 'https://fetch-hiring.s3.amazonaws.com/hiring.json';
         try{
           const response = await fetch(proxyUrl + targetUrl);
           const results = await response.json();
-          const filteredResults = results.filter(result => result.name !== null && result.name !== '');
-          const sortedResultsByName = filteredResults.sort((first, second) => first['name'] > second['name']);
-          const sortedResultsByListId = sortedResultsByName.sort((first, second) => first['listId'] - second['listId']);
-          
-        //   const sortedResultsByListId = filteredResults.sort((first, second) => first['listId'] - second['listId']);
-        //   const sortedResultsByName = sortedResultsByListId.sort((first, second) => first['name'] > second['name']);
-
+          let filteredResults = results.filter(result => result.name !== null && result.name !== '');
+          let sortedResultsByName = filteredResults.sort((first, second) => first['name'] > second['name']);
+          let sortedResultsByListId = sortedResultsByName.sort((first, second) => first['listId'] - second['listId'])
           this.results = sortedResultsByListId;
           console.log(this.results)
           } catch(error) {
