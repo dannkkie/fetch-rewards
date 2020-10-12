@@ -1,18 +1,6 @@
 # fetch-rewards
 
 ## Project setup
-
-### Clone Project
-```
-git clone https://github.com/dannkkie/fetch-rewards.git
-
-
-### Change to the cloned project directory
-```
-cd fetch-rewards
-```
-
-### Install required Modules
 ```
 npm install
 ```
